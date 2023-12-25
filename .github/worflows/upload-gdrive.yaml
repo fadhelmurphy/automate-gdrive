@@ -1,0 +1,21 @@
+# .github/workflows/main.yml
+name: master
+on: [push]
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Upload to gdrive
+        uses: adityak74/google-drive-upload-git-action@main
+        with:
+          credentials: ${{ secrets.GOOGLE_DRIVE_SA_KEY }}
+          filename: "Airbnb Listings Bangkok.csv"
+          folderId: ${{ secrets.FOLDERID }}
+          overwrite: "true" # optional boolean
+          
