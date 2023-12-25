@@ -18,8 +18,8 @@ jobs:
         with:
           credentials: ${{ secrets.GOOGLE_DRIVE_SA_KEY }}
           filename: |
-            ./output/*.csv
-            ./output/*.ipynb
+            "./output/*.csv"
+            "./output/*.ipynb"
           folderId: ${{ secrets.FOLDERID }}
           overwrite: "true" # optional boolean
           
