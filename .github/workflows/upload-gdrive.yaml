@@ -17,7 +17,9 @@ jobs:
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.GOOGLE_DRIVE_SA_KEY }}
-          filename: "./output/*.(csv|ipynb)"
+          filename: |
+            ./output/*.csv
+            ./output/*.ipynb
           folderId: ${{ secrets.FOLDERID }}
           overwrite: "true" # optional boolean
           
