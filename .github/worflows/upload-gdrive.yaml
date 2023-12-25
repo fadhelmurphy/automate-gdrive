@@ -1,17 +1,16 @@
-# .github/workflows/main.yml
-name: master
+name: Upload CSV to Google Drive
+
 on:
   push:
     branches:
-      - "master"
+      - master  # Ganti dengan nama branch yang sesuai
 
 jobs:
-  my_job:
+  upload:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Upload to gdrive
